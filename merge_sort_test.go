@@ -11,7 +11,7 @@ func TestSort(t *testing.T) {
 		t.Errorf("TestingSort: Expected length %v, got %v", len(good_slc), len(got))
 	}
 
-	for idx, _ := range got {
+	for idx := range got {
 		if idx != 0 && got[idx] < got[idx-1] {
 			t.Errorf("TestingSort: Slice not sorted. Returned slice: %v", got)
 		}
