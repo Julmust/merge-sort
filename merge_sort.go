@@ -1,14 +1,16 @@
 package merge_sort
 
-func sort(input []int) []int {
+func Sort(input []int) []int {
 	var output []int
 	slice_length := len(input)
+	split_point := slice_length / 2
+
 	if slice_length == 1 {
 		return input
 	}
-	split_point := slice_length / 2
-	low := sort(input[:split_point])
-	high := sort(input[split_point:])
+
+	low := Sort(input[:split_point])
+	high := Sort(input[split_point:])
 
 	for {
 		if len(low) == 0 {
